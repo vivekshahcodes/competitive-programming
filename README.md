@@ -1,2 +1,2 @@
 # Competitive-Programming
-My competitive programming algorithms and templates
+My competitive programming algorithms, templates and solutions
