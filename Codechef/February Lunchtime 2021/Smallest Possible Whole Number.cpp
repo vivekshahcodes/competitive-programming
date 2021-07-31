@@ -15,7 +15,11 @@ int main(){
 
     cin>>n>>k;
 
-    cout<<n%k<<endl;
+    if(k==0){
+        cout<<n<<endl;
+    }else{
+        cout<<n%k<<endl;
+    }
 
   }
 
