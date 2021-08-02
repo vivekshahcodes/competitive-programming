@@ -15,11 +15,7 @@ int main(){
 
     cin>>n;
 
-    if(n&1){
-        cout<<2<<" "<<n-1<<endl;
-    }else{
-        cout<<2<<" "<<n<<endl;
-    }
+    cout<<2<<" "<<n-1<<endl;
 
   }
 
