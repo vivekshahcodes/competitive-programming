@@ -3,12 +3,12 @@ using namespace std;
 
 typedef long long ll;
 
-void dfs(int n, vector<int> adj[], bool visited[]){
-    if(visited[n]){
+void dfs(int s, vector<int> adj[], bool visited[]){
+    if(visited[s]){
         return;
     }
-    visited[n] = true;
-    for(auto i:adj[n]){
+    visited[s] = true;
+    for(auto i:adj[s]){
         if(!visited[i]){
             dfs(i,adj,visited);
         }
@@ -23,8 +23,7 @@ int main(){
 
     vector<int> adj[n+1];
     bool visited[n+1];
-
-    memset(visited,false,sizeof(visited));
+    memset(visited,false,n+1);
 
     for(int i=0;i<m;i++){
         int a,b;
@@ -33,22 +32,24 @@ int main(){
         adj[b].push_back(a);
     }
 
-    if(m!=n-1){
-        cout<<"NO";
+    bool isTree = true;
+
+    if(n-1!=m){
+        isTree = false;
     }else{
-        int comp = 0;
-        for(int i=1;i<=n;i++){
+        dfs(1,adj,visited);
+        for(int i=2;i<=n;i++){
             if(!visited[i]){
-                dfs(i,adj,visited);
-                comp++;
+                isTree = false;
+                break;
             }
         }
+    }
 
-        if(comp>1){
-            cout<<"NO";
-        }else{
-            cout<<"YES";
-        }
+    if(isTree){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
     }
 
 
