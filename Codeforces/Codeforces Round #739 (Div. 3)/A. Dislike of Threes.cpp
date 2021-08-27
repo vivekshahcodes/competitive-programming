@@ -3,15 +3,6 @@ using namespace std;
 
 typedef long long ll;
 
-bool is_good(int n){
-  
-    if(n%3==0 || n%10==3){
-        return false;
-    }
-
-    return true;
-}
-
 int main(){
 
   int t;
@@ -24,11 +15,11 @@ int main(){
 
     cin>>n;
 
-    int ans = 0, c = 0;
+    int ans = 1, c = 1;
 
     while(c<n){
         ans++;
-        while(!is_good(ans)){
+        while(ans%3==0 || ans%10==3){
             ans++;
         }
         c++;
