@@ -8,6 +8,7 @@ int main(){
     bool flag = true;
 
     while(cin>>n){
+        
         if(n==42){
             flag = false;
         }
