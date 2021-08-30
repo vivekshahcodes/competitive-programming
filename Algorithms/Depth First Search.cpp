@@ -1,4 +1,4 @@
-void dfs(int s){
+void dfs(int s, vector<int> adj[], bool visited[]){
 
     if(visited[s]){
         return;
