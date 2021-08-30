@@ -1,4 +1,6 @@
-void bfs(int s){
+void bfs(int s, vector<int> adj[], bool visited[]){
+    
+    queue<int> q;
 
     visited[s] = true;
     q.push(s);
