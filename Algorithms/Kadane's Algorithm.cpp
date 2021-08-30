@@ -7,5 +7,5 @@ int maxSubarraySum(int n, int a[]) {
         ans = max(ans,curr);
     }
 
-    return curr;
+    return ans;
 }
