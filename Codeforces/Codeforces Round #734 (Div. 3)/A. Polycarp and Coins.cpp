@@ -16,15 +16,14 @@ int main(){
     cin>>n;
 
     ll x = n/3;
-    ll y = x+1;
+    ll y = n%3;
 
-    ll a = n - (x*2);
-    ll b = n - (y*2);
-
-    if(abs(x-a)<abs(y-b)){
-        cout<<a<<" "<<x<<endl;
+    if(y==0){
+        cout<<x<<" "<<x<<endl;
+    }else if(y==1){
+        cout<<x+1<<" "<<x<<endl;
     }else{
-        cout<<b<<" "<<y<<endl;
+        cout<<x<<" "<<x+1<<endl;
     }
 
   }
