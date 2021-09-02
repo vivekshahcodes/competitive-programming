@@ -15,20 +15,18 @@ int main(){
 
     cin>>n;
 
-    int a[n], ans = 0;
+    int a[n], ans;
     
     for(int i=0;i<n;i++){
         cin>>a[i];
-        ans = max(ans,a[i]);
+        if(i==0){
+            ans = a[i];
+        }else{
+            ans&=a[i];
+        }
     }
 
-    int x = a[0];
-
-    for(int i=0;i<n;i++){
-        x&=a[i];
-    }
-
-    cout<<min(ans,x)<<endl;
+    cout<<ans<<endl;
 
 
   }
