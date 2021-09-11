@@ -13,6 +13,7 @@ int main(){
     bool vladik = true;
 
     while(true){
+        
         if(vladik){
             if(a-curr>=0){
                 a-=curr;
