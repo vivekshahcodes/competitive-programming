@@ -9,7 +9,7 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n;
+    ll n;
 
     cin>>n;
 
