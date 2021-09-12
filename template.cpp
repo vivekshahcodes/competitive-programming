@@ -15,9 +15,7 @@ int main(){
 
     while(t--){
 
-
-
-
+        
     }
 
     return 0;
