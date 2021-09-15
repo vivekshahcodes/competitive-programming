@@ -16,12 +16,7 @@ int main(){
     string s;
 
     cin>>s;
-
-    if(k==1){
-        cout<<s;
-        return 0;
-    }
-
+    
     map<char,int> m;
 
     for(int i=0;i<s.length();i++){
