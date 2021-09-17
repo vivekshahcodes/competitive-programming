@@ -29,20 +29,14 @@ int main(){
 
     cin>>n;
 
-    vector<int> luckyNums;
+    bool flag = false;
 
     for(int i=1;i<=1000;i++){
         if(isLucky(i)){
-            luckyNums.push_back(i);
-        }
-    }
-
-    bool flag = false;
-
-    for(int i:luckyNums){
-        if(n%i==0){
-            flag = true;
-            break;
+            if(n%i==0){
+                flag = true;
+                break;
+            }
         }
     }
 
