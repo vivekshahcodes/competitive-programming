@@ -3,6 +3,9 @@ using namespace std;
 
 typedef long long ll;
 
+int dx[] = {0,0,1,1};
+int dy[] = {0,1,0,1};
+
 int main(){
 
     ios_base::sync_with_stdio(false);
@@ -22,24 +25,14 @@ int main(){
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             map<char,int> m;
-            m[a[i][j]]++;
-            m[a[i][j+1]]++;
-            m[a[i+1][j]]++;
-            m[a[i+1][j+1]]++;
+            for(int k=0;k<4;k++){
+                m[a[i+dx[k]][j+dy[k]]]++;
+            }
             for(auto i:m){
                 if(i.second>2){
                     ans = true;
-                    break;
                 }
             }
-
-            if(ans){
-                break;
-            }
-        }
-
-        if(ans){
-            break;
         }
     }
 
