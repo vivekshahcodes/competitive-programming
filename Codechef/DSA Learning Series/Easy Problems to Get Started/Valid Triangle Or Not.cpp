@@ -19,7 +19,7 @@ int main(){
 
     sort(v.begin(),v.end());
 
-    if(v[0]+v[1]<v[2]){
+    if(v[0]+v[1]<=v[2]){
         cout<<"NO";
     }else{
         cout<<"YES";
