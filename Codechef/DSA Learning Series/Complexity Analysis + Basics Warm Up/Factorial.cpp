@@ -19,23 +19,15 @@ int main(){
 
         cin>>n;
 
-        int two = 0, five = 0;
+        ll pow = 5, ans = 0;
 
-        for(int i=1;i<=n;i++){
-            
-            int x = i;
-            while(x%2==0){
-                two++;
-                x/=2;
-            }
-
-            while(x%5==0){
-                five++;
-                x/=5;
-            }
+        while(n/pow!=0){
+            ans += n/pow;
+            pow*=5;
         }
 
-        cout<<min(two,five)<<endl;
+        cout<<ans<<endl;
+
     }
 
     return 0;
