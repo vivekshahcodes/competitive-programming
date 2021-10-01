@@ -28,8 +28,6 @@ int main(){
         }
     }
 
-    sort(v.begin(),v.end());
-
     int ans = INT_MAX;
 
     for(int i=1;i<v.size();i++){
