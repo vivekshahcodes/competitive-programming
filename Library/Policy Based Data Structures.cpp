@@ -13,9 +13,9 @@
 
     Find number of elements smaller than k -> A.order_of_key(k)
 
-    First element >= k in the set -> *A.lower_bound(k)
+    Find the first element >= k in the set -> *A.lower_bound(k)
 
-    First element >k in the set -> *A.upper_bound(k)
+    Find the first element > k in the set -> *A.upper_bound(k)
 
     Remove the element k -> A.erase(k)
 
