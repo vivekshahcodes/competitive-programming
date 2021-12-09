@@ -32,7 +32,7 @@ int main(){
 
         points += a[i];
 
-        for(int i=4;i>=0;i--){
+        for(ll i=4;i>=0;i--){
 
             ll x = points/b[i];
             points -= x*b[i];
@@ -40,7 +40,7 @@ int main(){
         }
     }
 
-    for(int i=0;i<5;i++){
+    for(ll i=0;i<5;i++){
         cout<<m[b[i]]<<" ";
     }
 
