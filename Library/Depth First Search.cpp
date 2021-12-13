@@ -9,6 +9,6 @@ void dfs(int s, vector<int> adj[], bool visited[]){
     //Process the node
 
     for(auto i:adj[s]){
-        dfs(i);
+        dfs(i,adj,visited);
     }
 }
