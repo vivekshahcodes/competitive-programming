@@ -3,32 +3,28 @@ using namespace std;
 
 typedef long long ll;
 
-int dp[20000015] = {0};
+ll dp[20000015] = {0};
 
-int minStepsToOne(int n){
+void minStepsToOne(){   
+    
+    dp[1] = 0;
 
-    if(n==1){
-        return 0;
+    for(ll i=2;i<=2e7;i++){
+        ll a,b,c;
+        a = b = c = INT_MAX;
+
+        a = dp[i-1]+1;
+
+        if(i%2==0){
+            b = dp[i/2]+1;
+        }
+
+        if(i%3==0){
+            c = dp[i/3]+1;
+        }
+
+        dp[i] = min(a,min(b,c));
     }
-
-    if(dp[n] != 0){
-        return dp[n];
-    }
-
-    int a,b,c;
-    a = b = c = INT_MAX;
-
-    if(n%3==0){
-        a = minStepsToOne(n/3) + 1;
-    }
-
-    if(n%2==0){
-        b = minStepsToOne(n/2) + 1;
-    }
-
-    c = minStepsToOne(n-1) + 1;
-
-    return dp[n] = min(min(a,b),c);
 }
 
 int main(){
@@ -37,17 +33,19 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int t, c = 1;
+    ll t, c = 1;
 
     cin>>t;
 
+    minStepsToOne();
+
     while(t--){
 
-        int n;
+        ll n;
 
         cin>>n;
 
-        cout<<"Case "<<c<<": "<<minStepsToOne(n)<<endl;
+        cout<<"Case "<<c<<": "<<dp[n]<<endl;
 
         c++;
 
