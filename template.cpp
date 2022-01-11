@@ -35,10 +35,11 @@ int main() {
 
 	fastio();
 
-	int t = 1;
+	int t;
+	cin>>t;
 
 	while(t--){
-
+		
 		
 	}
 
