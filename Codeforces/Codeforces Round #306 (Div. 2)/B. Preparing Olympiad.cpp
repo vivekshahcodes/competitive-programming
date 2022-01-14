@@ -22,25 +22,7 @@ typedef long long ll;
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-ll ans = 0;
 
-void f(int n, ll a[], ll l, ll r, ll x, ll total, ll mi, ll ma){
-
-	if(n<0){
-		return;
-	}
-
-	f(n-1,a,l,r,x,total,mi,ma);
-	ll c = a[n];
-	mi = min(mi,c);
-	ma = max(ma,c);
-	total += c;
-	f(n-1,a,l,r,x,total,mi,ma);
-
-	if(total>=l && total<=r && ma-mi>=x){
-		ans++;
-	}
-}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -61,15 +43,40 @@ int main() {
 		ll n,l,r,x;
 		cin>>n>>l>>r>>x;
 
-		ll a[n];
-
+		vector<ll> a(n);
 		for(ll i=0;i<n;i++){
 			cin>>a[i];
 		}
 
-		sort(a,a+n);
+		ll ans = 0;
 
-		f(n-1,a,l,r,x,0ll,INT_MAX,0ll);
+		for(ll i=1;i<(1ll<<n);i++){
+
+			ll total = 0;
+
+			if(__builtin_popcountll(i)<2){
+				continue;
+			}
+
+			ll ind = 0;
+			ll curr = i;
+			ll mi = INT_MAX;
+			ll ma = 0;
+
+			while(curr){
+				if(curr&1){
+					mi = min(mi,a[ind]);
+					ma = max(ma,a[ind]);
+					total += a[ind];
+				}
+				ind++;
+				curr>>=1;
+			}
+
+			if(total>=l && total<=r && ma-mi>=x){
+				ans++;
+			}
+		}
 
 		cout<<ans;
 	}
