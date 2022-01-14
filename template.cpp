@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -48,9 +46,3 @@ int main() {
 
 	return 0;
 }
-]]></content>
-  <tabTrigger>wt</tabTrigger>
-  <description>cp snippet</description>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <!-- <scope >source.python</scope > -->
-</snippet>
