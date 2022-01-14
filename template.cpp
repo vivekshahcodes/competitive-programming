@@ -1,3 +1,5 @@
+<snippet>
+  <content><![CDATA[
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -11,15 +13,16 @@ using namespace std;
 #endif
 
 template<class T> void _print(T a) { cerr << a; }
+template<class T, class V> void _print(pair<T,V> p){ _print('{'); _print(p.first); _print(','); _print(p.second); _print('}'); }
 template<class T> void _print(vector<T> v) { cerr << "[ "; for (T i : v) { _print(i); cerr << " "; } cerr << "]"; }
-template<class T> void _print(vector<vector<T>> v) { cerr << "\n"; for (auto i : v) { cerr << "[ "; for (T j : i) { cerr << j << " "; } cerr << "]\n"; } }
+template<class T> void _print(vector<vector<T>> v) { cerr << "\n"; for (auto i : v) { cerr << "[ "; _print(i); cerr << "]\n"; } }
 template<class T> void _print(set<T> s) { cerr << "[ "; for (T i : s) { _print(i); cerr << " "; } cerr << "]"; }
 template<class T, class V> void _print(map<T, V> m) { cerr << "\n"; for (auto i : m) { _print(i.first); cerr << " "; _print(i.second); cerr << "\n"; } }
+
 
 typedef long long ll;
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 
 
 
@@ -39,9 +42,15 @@ int main() {
 	cin>>t;
 
 	while(t--){
-		
+
 		
 	}
 
 	return 0;
 }
+]]></content>
+  <tabTrigger>wt</tabTrigger>
+  <description>cp snippet</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>
