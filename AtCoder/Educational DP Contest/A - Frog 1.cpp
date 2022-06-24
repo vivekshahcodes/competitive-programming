@@ -140,7 +140,7 @@ int main(){
 		cin>>v[i];
 	}
 	
-	ll a = 0, b = 0, c;
+	ll a = 0, b = 0, c = 0;
 	
 	for(ll i=1;i<n;i++){
 		ll first = b + abs(v[i]-v[i-1]);
