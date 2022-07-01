@@ -12,13 +12,7 @@ int main(){
         ll n,m;
         cin>>n>>m;
 
-        ll ans = (m*(m+1))/2;
-
-        for(ll i=2*m;i<=m*n;i+=m){
-            ans += i;
-        }
-
-        cout<<ans<<"\n";
+        cout<<(m*(m+1))/2 + m*((n*(n+1))/2) - m<<"\n";
     }
     
     return 0;
