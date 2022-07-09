@@ -9,16 +9,12 @@ typedef long long ll;
 
 ll minCost(ll n, vector<ll>& v, int k){
 	
-	if(n==0){
-		return 0;
-	}
+	if(n==0) return 0;
 	
 	ll ans = 1e18;
 	
 	for(ll i=1;i<=k;i++){
-		if(n-i>=0){
-			ans = min(ans, minCost(n-i,v,k) + abs(v[n] - v[n-i]));
-		}
+		if(n-i>=0) ans = min(ans, minCost(n-i,v,k) + abs(v[n] - v[n-i]));
 	}
 	
 	return ans;
@@ -30,9 +26,7 @@ int main(){
 	cin>>n>>k;
 	
 	vector<ll> v(n);
-	for(ll i=0;i<n;i++){
-		cin>>v[i];
-	}
+	for(ll i=0;i<n;i++) cin>>v[i];
 	
 	cout<<minCost(n-1,v,k);
 	
@@ -51,20 +45,13 @@ typedef long long ll;
 
 ll minCost(ll n, vector<ll>& v, int k, vector<ll>& dp){
 	
-	if(n==0){
-		return 0;
-	}
-	
-	if(dp[n]!=-1){
-		return dp[n];
-	}
+	if(n==0) return 0;
+	if(dp[n]!=-1) return dp[n];
 	
 	ll ans = 1e18;
 	
 	for(ll i=1;i<=k;i++){
-		if(n-i>=0){
-			ans = min(ans, minCost(n-i,v,k,dp) + abs(v[n] - v[n-i]));
-		}
+		if(n-i>=0) ans = min(ans, minCost(n-i,v,k,dp) + abs(v[n] - v[n-i]));
 	}
 	
 	return dp[n] = ans;
@@ -76,9 +63,7 @@ int main(){
 	cin>>n>>k;
 	
 	vector<ll> v(n);
-	for(ll i=0;i<n;i++){
-		cin>>v[i];
-	}
+	for(ll i=0;i<n;i++) cin>>v[i];
 	
 	vector<ll> dp(n,-1);
 	
@@ -103,9 +88,7 @@ int main(){
 	cin>>n>>k;
 	
 	vector<ll> v(n);
-	for(ll i=0;i<n;i++){
-		cin>>v[i];
-	}
+	for(ll i=0;i<n;i++) cin>>v[i];
 	
 	vector<ll> dp(n);
 	dp[0] = 0;
@@ -113,9 +96,7 @@ int main(){
 	for(ll i=1;i<n;i++){
 		dp[i] = 1e18;
 		for(ll j=1;j<=k;j++){
-			if(i-j>=0){
-				dp[i] = min(dp[i], dp[i-j] + abs(v[i]-v[i-j]));
-			}
+			if(i-j>=0) dp[i] = min(dp[i], dp[i-j] + abs(v[i]-v[i-j]));
 		}
 	}
 	
