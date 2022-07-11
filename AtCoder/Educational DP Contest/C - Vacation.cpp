@@ -7,16 +7,12 @@ using namespace std;
 
 int maxPoints(int a, int n, vector<vector<int>>& v){
 	
-	if(n < 0){
-		return 0;
-	}
+	if(n<0) return 0;
 	
 	int best = 0;
 	
-	for(int i = 0; i < 3; i ++){
-		if(i != a){
-			best = max(best, maxPoints(i, n - 1, v) + v[n][i]);
-		}
+	for(int i=0;i<3;i++){
+		if(i!=a) best = max(best, maxPoints(i, n - 1, v) + v[n][i]);
 	}
 	
 	return best;
@@ -29,10 +25,8 @@ int main(){
 	
 	vector<vector<int>> v(n, vector<int> (3));
 	
-	for(int i = 0; i < n; i ++){
-		for(int j = 0; j < 3; j ++){
-			cin>>v[i][j];
-		}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<3;j++) cin>>v[i][j];
 	}
 	
 	cout<<maxPoints(3, n - 1, v);
@@ -50,20 +44,13 @@ using namespace std;
 
 int maxPoints(int a, int n, vector<vector<int>>& v, vector<vector<int>>& dp){
 	
-	if(n<0){
-		return 0;
-	}
-	
-	if(dp[n][a] != -1){
-		return dp[n][a];
-	}
+	if(n<0) return 0;
+	if(dp[n][a] != -1) return dp[n][a];
 	
 	int best = 0;
 	
-	for(int i = 0; i < 3; i ++){
-		if(i != a){
-			best = max(best, maxPoints(i, n - 1, v, dp) + v[n][i]);
-		}
+	for(int i=0;i<3;i++){
+		if(i!=a) best = max(best, maxPoints(i, n - 1, v, dp) + v[n][i]);
 	}
 	
 	return dp[n][a] = best;
@@ -76,10 +63,8 @@ int main(){
 	
 	vector<vector<int>> v(n, vector<int> (3));
 	
-	for(int i = 0; i < n; i ++){
-		for(int j = 0; j < 3; j ++){
-			cin>>v[i][j];
-		}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<3;j++) cin>>v[i][j];
 	}
 	
 	vector<vector<int>> dp(n, vector<int> (4, -1));
@@ -104,18 +89,15 @@ int main(){
 	
 	vector<vector<int>> v(n, vector<int> (3));
 	
-	for(int i = 0; i < n; i ++){
-		for(int j = 0; j < 3; j ++){
-			cin>>v[i][j];
-		}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<3;j++) cin>>v[i][j];
 	}
 	
 	vector<vector<int>> dp(n, vector<int> (4, 0));
-	for(int i = 0; i <= 3; i ++){
-		for(int j = 0; j < 3; j ++){
-			if(i != j){
-				dp[0][i] = max(dp[0][i], v[0][j]);
-			}
+	
+	for(int i=0;i<=3;i++){
+		for(int j=0;j<3;j++){
+			if(i!=j) dp[0][i] = max(dp[0][i], v[0][j]);
 		}
 	}
 	
@@ -150,18 +132,14 @@ int main(){
 	
 	vector<vector<int>> v(n, vector<int> (3));
 	
-	for(int i = 0; i < n; i ++){
-		for(int j = 0; j < 3; j ++){
-			cin>>v[i][j];
-		}
+	for(int i=0; i<n; i++){
+		for(int j=0; j<3; j++) cin>>v[i][j];
 	}
 	
 	vector<int> prev(4, 0);
 	for(int i = 0; i <= 3; i ++){
 		for(int j = 0; j < 3; j ++){
-			if(i != j){
-				prev[i] = max(prev[i], v[0][j]);
-			}
+			if(i != j) prev[i] = max(prev[i], v[0][j]);
 		}
 	}
 	
